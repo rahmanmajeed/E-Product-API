@@ -1,47 +1,47 @@
 
 
 /**
- * get all product
+ * get all order
  * @param  
  * @param {*} res 
  */
-exports.getAllProducts = (req, res, next) =>{
+exports.getAllOrders = (req, res, next) =>{
     res.status(200).json({message: 'This will handle GET request.'})  
 }
 
 
 /**
- * create new product
+ * create new order
  * @param {*} req 
  * @param {*} res 
  */
-exports.createProduct = (req, res, next) => {
+exports.createOrder = (req, res, next) => {
     res.status(200).json({message: 'This will handle POST request.'})
 }
 
 /**
- * product by id
+ * order by id
  * @param id req 
  * @param res 
  */
-exports.productById = (req, res, next) => {
-    res.status(200).json({message: `This will handle GET ${req.params.productId} request.`})
+exports.orderById = (req, res, next) => {
+    res.status(200).json({message: `This will handle GET ${req.params.orderId} request.`})
 }
 
 /**
- * product update by id
+ * order update by id
  * @param collection id 
  * @param res 
  */
-exports.updateProduct = (req, res, next) => {
+exports.updateOrder = (req, res, next) => {
     res.status(200).json({message: `This will handle PUT request.`})
 }
 
 /**
- * product destroy by id
+ * order destroy by id
  * @param id 
  * @param res 
  */
-exports.destroyProduct = (req, res, next) => {
+exports.destroyOrder = (req, res, next) => {
     res.status(200).json({message: `This will handle DELETE request.`})
 }
