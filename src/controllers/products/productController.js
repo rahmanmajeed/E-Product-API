@@ -5,8 +5,8 @@
  * @param  
  * @param {*} res 
  */
-exports.getAllProducts = (req, res) =>{
-    res.json({message: 'This will handle GET request.'})  
+exports.getAllProducts = (err, req, res, next) =>{
+    res.status(200).json({message: 'This will handle GET request.'})  
 }
 
 
@@ -15,8 +15,8 @@ exports.getAllProducts = (req, res) =>{
  * @param {*} req 
  * @param {*} res 
  */
-exports.createProduct = (req, res) => {
-    res.json({message: 'This will handle POST request.'})
+exports.createProduct = (err, req, res, next) => {
+    res.status(200).json({message: 'This will handle POST request.'})
 }
 
 /**
@@ -24,8 +24,8 @@ exports.createProduct = (req, res) => {
  * @param id req 
  * @param res 
  */
-exports.productById = (req, res) => {
-    res.json({message: `This will handle GET ${req.params.productId} request.`})
+exports.productById = (err, req, res, next) => {
+    res.status(200).json({message: `This will handle GET ${req.params.productId} request.`})
 }
 
 /**
@@ -33,8 +33,8 @@ exports.productById = (req, res) => {
  * @param collection id 
  * @param res 
  */
-exports.updateProduct = (req, res) => {
-    res.json({message: `This will handle PUT request.`})
+exports.updateProduct = (err, req, res, next) => {
+    res.status(200).json({message: `This will handle PUT request.`})
 }
 
 /**
@@ -42,6 +42,6 @@ exports.updateProduct = (req, res) => {
  * @param id 
  * @param res 
  */
-exports.destroyProduct = (req, res) => {
-    res.json({message: `This will handle DELETE request.`})
+exports.destroyProduct = (err, req, res, next) => {
+    res.status(200).json({message: `This will handle DELETE request.`})
 }
