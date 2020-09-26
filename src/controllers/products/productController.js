@@ -1,5 +1,6 @@
 
-
+const Product = require('./../../models/product')
+const mongoose = require('mongoose')
 /**
  * get all product
  * @param  
@@ -16,9 +17,18 @@ exports.getAllProducts = (req, res, next) =>{
  * @param {*} res 
  */
 exports.createProduct = (req, res, next) => {
-    const product = {
-        name: req.body
-    }
+    const product = new Product({
+        _id: new mongoose.Types.ObjectId(),
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price
+    })
+
+    product.save().then(res => {
+        console.log(res)
+    }).catch(err=> {
+        console.log(err)
+    })
     res.status(200).json({
         message: 'This will handle POST request.',
         product:product

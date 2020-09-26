@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     res.send('This is ROOT PATH...')
 })
 
-dbConfig
+     
 app.use('/product', productRoutes)
 app.use('/orders', orderRoutes)
 
