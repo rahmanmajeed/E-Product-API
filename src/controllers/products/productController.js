@@ -7,6 +7,14 @@ const mongoose = require('mongoose')
  * @param {*} res 
  */
 exports.getAllProducts = (req, res, next) =>{
+    Product.find()
+           .exec()
+           .then(docs => {
+               res.status(201).json(docs)
+           })
+           .catch(err => {
+               res.status(404).json({error: err})
+           })
     res.status(200).json({message: 'This will handle GET request.'})  
 }
 
@@ -44,7 +52,11 @@ exports.productById = async(req, res, next) => {
     const id = req.params.productId
     await Product.findById(id).exec()
                  .then(result => {
+                     if(result){
                         res.status(200).json({product: result})
+                     }else {
+                         res.status(404).json({message: 'No valid entry found !!!'})
+                     }
                     })
                  .catch(err => {
                         res.status(404).json({message: 'No Product found!!!'})
